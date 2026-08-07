@@ -1,0 +1,21 @@
+========================================================================
+DYNALEKTRIC ENTERPRISE FRONTEND - HOSTING & DEPLOYMENT INSTRUCTIONS
+========================================================================
+
+1. BUILD COMMAND:
+   Run 'npm run build' or 'npm run build:production' to generate the static site build.
+
+2. BUILD OUTPUT DIRECTORY:
+   The complete static site is output to the 'dist/' folder.
+
+3. WEB SERVER CONFIGURATION:
+   - Root Directory: Point web server root (Nginx, Apache, IIS, Netlify, Vercel, S3+CloudFront) to 'dist/'.
+   - Static File Caching:
+     - HTML files: Cache-Control: public, max-age=0, must-revalidate
+     - JS / CSS files: Cache-Control: public, max-age=31536000, immutable
+     - Images / Media: Cache-Control: public, max-age=2592000
+
+4. SSL & CANONICAL URLS:
+   Ensure HTTPS is enabled. Canonical URLs in pre-rendered HTML point to https://dynalektric.com/.
+
+========================================================================

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Convert Images to Base64</title>
+</head>
+<body>
+  <h2>Converting Images</h2>
+  <div id="output">Loading...</div>
+  <script>
+    const images = [
+      { key: 'cnc', url: 'file:///C:/Users/SriBalaji/.gemini/antigravity-ide/brain/2d51962a-b405-46dd-9669-6dd2f8cefa8a/case_cnc_transformer_1786015841433.png' },
+      { key: 'svg', url: 'file:///C:/Users/SriBalaji/.gemini/antigravity-ide/brain/2d51962a-b405-46dd-9669-6dd2f8cefa8a/case_svg_reactor_1786015856003.png' },
+      { key: 'kva', url: 'file:///C:/Users/SriBalaji/.gemini/antigravity-ide/brain/2d51962a-b405-46dd-9669-6dd2f8cefa8a/case_300kva_transformer_1786015872029.png' },
+      { key: 'mhe', url: 'file:///C:/Users/SriBalaji/.gemini/antigravity-ide/brain/2d51962a-b405-46dd-9669-6dd2f8cefa8a/case_mhe_charger_1786015885239.png' },
+      { key: 'fcbc', url: 'file:///C:/Users/SriBalaji/.gemini/antigravity-ide/brain/2d51962a-b405-46dd-9669-6dd2f8cefa8a/case_scr_fcbc_charger_1786015899177.png' }
+    ];
+
+    async function process() {
+      const results = {};
+      for (const item of images) {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        await new Promise((resolve, reject) => {
+          img.onload = resolve;
+          img.onerror = resolve; // proceed even if error
+          img.src = item.url;
+        });
+        const canvas = document.createElement('canvas');
+        // scale down slightly to keep base64 reasonable if needed
+        canvas.width = img.naturalWidth || 800;
+        canvas.height = img.naturalHeight || 800;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        results[item.key] = canvas.toDataURL('image/jpeg', 0.85);
+      }
+      document.getElementById('output').innerText = JSON.stringify(results);
+    }
+    process();
+  </script>
+</body>
+</html>

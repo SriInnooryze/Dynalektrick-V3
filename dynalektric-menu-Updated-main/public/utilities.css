@@ -1,0 +1,51 @@
+/* Utility Classes */
+
+.mono { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; }
+.mono-num { font-family: var(--font-mono); font-feature-settings: 'tnum'; }
+
+.eyebrow,
+.eyebrow-label,
+.about-eyebrow,
+.section-head .eyebrow,
+.section-head .eyebrow .mono,
+.section-head .eyebrow .label,
+.page-hero-copy .mono,
+.page-hero .mono,
+.qa-process-heading,
+.home-main .eyebrow-label {
+  font-family: var(--font-body) !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--accent) !important;
+}
+
+.on-dark .eyebrow,
+.on-dark .eyebrow-label,
+.eyebrow-label.on-dark,
+.section-head .eyebrow .mono.on-dark {
+  color: var(--brand-light) !important;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.section { padding: var(--section-y) 0; }
+.section-tight { padding: calc(var(--section-y) * 0.6) 0; }
+
+.rule { height: 1px; background: var(--rule); border: 0; }
+.rule-soft { height: 1px; background: var(--rule-soft); border: 0; }
+
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block; }
+.big-num {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 7vw, 96px);
+  font-weight: 350;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--red);
+}

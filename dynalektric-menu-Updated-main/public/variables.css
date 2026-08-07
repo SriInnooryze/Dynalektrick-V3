@@ -1,0 +1,74 @@
+/* CSS Variables & Design System Tokens */
+
+:root {
+  /* Clean blue-grey base — Power | Motion | Safety */
+  --bg: #F5F7FA;
+  --bg-alt: #EAEFF5;
+  --bg-card: #FFFFFF;
+  --ink: #002A52;
+  --ink-soft: #334155;
+  --ink-muted: #64748B;
+  --rule: #CBD5E1;
+  --rule-soft: #CBD5E1;
+
+  /* Deep navy for premium dark panels */
+  --panel-dark: #003366;
+  --on-dark: #F5F7FA;
+  --line-soft: #7DD3FC;
+
+  /* Primary = ocean blue, Secondary = deep navy */
+  --accent: #0077B6;
+  --accent-hover: #005F92;
+  --accent-soft: #D7EEF8;
+  --accent-2: #003366;
+  --accent-2-soft: #D6E1EE;
+
+  /* Brand accents */
+  --brand-bright: #00AEEF;
+  --brand-light: #7DD3FC;
+
+  /* Red accent — used sparingly for section numbers, eyebrows, dividers, active states */
+  --red: #C1121F;
+  --red-soft: rgba(193, 18, 31, 0.08);
+
+  /* Typography — Montserrat only, single family across the site */
+  --font-display: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Density */
+  --section-y: 96px;
+  --container-max: 1480px;
+  --gutter: 72px;
+
+  /* Effects */
+  --radius: 2px;
+  --radius-card: 4px;
+  --shadow-card: 0 1px 2px rgba(14,17,22,0.04), 0 8px 24px rgba(14,17,22,0.04);
+  --shadow-card-hover: 0 1px 2px rgba(14,17,22,0.05), 0 16px 40px rgba(14,17,22,0.08);
+}
+
+@media (min-width: 1600px) {
+  :root { --gutter: 88px; }
+}
+
+@media (max-width: 1200px) {
+  :root { --gutter: 48px; }
+}
+
+@media (max-width: 1024px) {
+  :root { --section-y: 72px; --gutter: 40px; }
+}
+
+@media (max-width: 768px) {
+  :root { --gutter: 24px; --section-y: 56px; }
+}
+
+@media (max-width: 600px) {
+  :root { --gutter: 20px; }
+}
+
+[data-density="compact"] {
+  --section-y: 80px;
+  --gutter: 24px;
+}

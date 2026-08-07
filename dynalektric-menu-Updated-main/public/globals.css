@@ -1,0 +1,55 @@
+/* Global Base Styles */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body[data-texture="grid"]::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(14,17,22,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14,17,22,0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+body[data-texture="dots"]::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: radial-gradient(rgba(14,17,22,0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#app { position: relative; z-index: 1; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+h1 { font-size: clamp(2.375rem, 4.8vw, 3.875rem); line-height: 1.04; letter-spacing: -0.02em; font-weight: 600; }
+h2 { font-size: clamp(1.6875rem, 3.3vw, 2.625rem); line-height: 1.12; letter-spacing: -0.015em; font-weight: 600; }
+h3 { font-size: clamp(1.375rem, 2.1vw, 1.6875rem); line-height: 1.25; letter-spacing: -0.01em; font-weight: 600; }
+h4 { font-size: clamp(1.1875rem, 1.7vw, 1.3125rem); line-height: 1.3; letter-spacing: -0.005em; font-weight: 600; }
+
+p { color: var(--ink-soft); text-wrap: pretty; font-size: clamp(15px, 1vw, 17px); line-height: 1.65; }
+.lead { font-size: clamp(1.125rem, 1.4vw, 1.25rem); line-height: 1.55; color: var(--ink-soft); max-width: 60ch; font-weight: 400; }
