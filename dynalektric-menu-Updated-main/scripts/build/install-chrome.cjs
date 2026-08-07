@@ -15,7 +15,12 @@ async function installChrome() {
       return;
     }
     const cacheDir = process.env.PUPPETEER_CACHE_DIR || path.join(os.homedir(), '.cache', 'puppeteer');
-    const buildId = await resolveBuildId(Browser.CHROME, platform, 'latest');
+
+    // Install the exact Chrome build the installed `puppeteer` package is pinned to
+    // (not 'latest') — puppeteer.launch() looks for that specific revision in the
+    // cache and fails if a newer/older one is there instead.
+    const { PUPPETEER_REVISIONS } = await import('puppeteer-core/internal/revisions.js');
+    const buildId = await resolveBuildId(Browser.CHROME, platform, PUPPETEER_REVISIONS.chrome);
     console.log(`[install-chrome] Installing Chrome (${buildId}) to ${cacheDir}...`);
     await install({
       browser: Browser.CHROME,
