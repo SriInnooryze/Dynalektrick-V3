@@ -4,12 +4,12 @@
   "description": "Enterprise frontend architecture for Dynalektric Equipment Private Limited",
   "main": "src/app.jsx",
   "scripts": {
-    "postinstall": "npx puppeteer browsers install chrome",
+    "postinstall": "node scripts/build/install-chrome.cjs",
     "clean": "node scripts/build/clean.cjs",
     "build:js": "node scripts/build/build-js.cjs",
     "build:staging": "node scripts/prerender/prerender.cjs staging",
     "build:production": "node scripts/prerender/prerender.cjs production",
-    "build": "npx puppeteer browsers install chrome && npm run clean && npm run build:js && npm run build:production",
+    "build": "node scripts/build/install-chrome.cjs && npm run clean && npm run build:js && npm run build:production",
     "prerender": "node scripts/prerender/prerender.cjs",
     "verify": "node scripts/verify/__verify_ind.cjs",
     "optimize": "node scripts/optimize/copy-assets.cjs"
@@ -24,7 +24,7 @@
   "author": "Dynalektric Engineering Team",
   "license": "ISC",
   "type": "commonjs",
-  "devDependencies": {
+  "dependencies": {
     "esbuild": "^0.28.1",
     "puppeteer": "^25.3.0"
   }
