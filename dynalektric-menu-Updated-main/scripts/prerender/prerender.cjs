@@ -12,7 +12,8 @@ const ROOT_DIR = path.resolve(__dirname, "../../");
 const PUBLIC_DIR = path.join(ROOT_DIR, "public");
 const OUTPUT_DIR = path.join(ROOT_DIR, "dist");
 const PORT = 4173;
-const BUILD_MODE = process.env.BUILD_MODE || "staging";
+const modeArg = process.argv.find((arg) => arg.startsWith("--mode="))?.split("=")[1] || process.argv[2];
+const BUILD_MODE = modeArg || process.env.BUILD_MODE || "staging";
 
 // Step 0: Compile JSX source to browser-ready JavaScript before prerendering.
 console.log("Compiling JSX to JavaScript (esbuild)...");
@@ -159,6 +160,7 @@ Disallow: /
 
     browser = await puppeteer.launch({
       headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
     });
 
     for (const pageFile of pages) {

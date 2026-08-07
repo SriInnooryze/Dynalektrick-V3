@@ -6,8 +6,8 @@
   "scripts": {
     "clean": "node scripts/build/clean.cjs",
     "build:js": "node scripts/build/build-js.cjs",
-    "build:staging": "set BUILD_MODE=staging&& node scripts/prerender/prerender.cjs",
-    "build:production": "set BUILD_MODE=production&& node scripts/prerender/prerender.cjs",
+    "build:staging": "node scripts/prerender/prerender.cjs staging",
+    "build:production": "node scripts/prerender/prerender.cjs production",
     "build": "npm run clean && npm run build:js && npm run build:production",
     "prerender": "node scripts/prerender/prerender.cjs",
     "verify": "node scripts/verify/__verify_ind.cjs",
