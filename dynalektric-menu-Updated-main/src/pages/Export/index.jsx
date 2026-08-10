@@ -484,6 +484,13 @@ function PageExport({ navigate }) {
                           <span>{f.ctaText || 'View Certificate'}</span>
                           <span aria-hidden="true">→</span>
                         </a>
+                      ) : typeof f.v === 'string' && f.v.includes('\n') ? (
+                        f.v.split('\n').map((line, idx) => (
+                          <React.Fragment key={idx}>
+                            {idx > 0 && <br />}
+                            {line}
+                          </React.Fragment>
+                        ))
                       ) : (
                         f.v
                       )}

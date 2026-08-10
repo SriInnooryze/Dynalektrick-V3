@@ -1811,7 +1811,7 @@
       /* @__PURE__ */ React.createElement("svg", { viewBox: "0 0 24 24", width: "14", height: "14", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": "true" }, /* @__PURE__ */ React.createElement("path", { d: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" }), /* @__PURE__ */ React.createElement("polyline", { points: "14 2 14 8 20 8" }), /* @__PURE__ */ React.createElement("line", { x1: "16", y1: "13", x2: "8", y2: "13" }), /* @__PURE__ */ React.createElement("line", { x1: "16", y1: "17", x2: "8", y2: "17" })),
       /* @__PURE__ */ React.createElement("span", null, f.ctaText || "View Certificate"),
       /* @__PURE__ */ React.createElement("span", { "aria-hidden": "true" }, "\u2192")
-    ) : f.v)))), /* @__PURE__ */ React.createElement("div", { className: "export-map" }, /* @__PURE__ */ React.createElement(
+    ) : typeof f.v === "string" && f.v.includes("\n") ? f.v.split("\n").map((line, idx) => /* @__PURE__ */ React.createElement(React.Fragment, { key: idx }, idx > 0 && /* @__PURE__ */ React.createElement("br", null), line)) : f.v)))), /* @__PURE__ */ React.createElement("div", { className: "export-map" }, /* @__PURE__ */ React.createElement(
       "iframe",
       {
         title: "Dynalektric Registered Address",

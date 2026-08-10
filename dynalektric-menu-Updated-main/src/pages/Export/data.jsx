@@ -56,7 +56,7 @@ const EXP_LEGAL = [
   { k: 'CIN', v: 'U29309KA2019PTC130052' },
   { k: 'GST', v: '29AAHCD5377K1Z1' },
   { k: 'IEC (Importer Exporter Code)', cta: true, ctaText: 'View Certificate', url: './assets/IEC-Certificate.pdf' },
-  { k: 'Registered address', v: 'Dynalektric Pvt. Ltd. Manufacturing facility, No-49/2, Vaderamanchanahalli Village,Kallubalu, Anekal Taluk, Jigani Hobli,Bangalore, India- 560105' },
+  { k: 'Registered address', v: 'Dynalektric Equipment Pvt. Ltd.\nManufacturing facility,\nNo-49/2 Vaderamanchanahalli Village, Kallubalu, Anekal Taluk,\nJigani Hobli, Bangalore, India- 560105' },
   { k: 'D-U-N-S number', v: 'Provided if available on request' },
 ];
 const EXP_FINANCIAL = [
