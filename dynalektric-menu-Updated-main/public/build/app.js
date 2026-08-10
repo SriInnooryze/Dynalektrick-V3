@@ -1924,14 +1924,14 @@
         }
       ];
       EXPORT_CUSTOMER_LOGOS = [
-        "./assets/Logo1.webp",
+        "./assets/Logo1.png",
         "./assets/Logo2.webp",
-        "./assets/Logo3.webp",
+        "./assets/Logo3.png",
         "./assets/Logo4.1.png",
         "./assets/Logo5.webp",
         "./assets/Logo6.jpg",
         "./assets/Logo 7.png",
-        "./assets/Logo8.webp",
+        "./assets/Logo8.png",
         "./assets/Logo9.webp"
       ];
       window.PageExport = PageExport;
