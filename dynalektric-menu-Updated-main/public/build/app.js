@@ -1183,7 +1183,7 @@
     return /* @__PURE__ */ React.createElement("main", { className: "page-enter" }, /* @__PURE__ */ React.createElement("section", { className: "page-hero page-hero--split about-hero" }, /* @__PURE__ */ React.createElement("div", { className: "container" }, /* @__PURE__ */ React.createElement("div", { className: "page-hero-copy" }, /* @__PURE__ */ React.createElement("div", { className: "mono" }, "ABOUT DYNALEKTRIC"), /* @__PURE__ */ React.createElement("h1", null, "Engineering-led electrical and electronics manufacturing."), /* @__PURE__ */ React.createElement("p", { className: "lead" }, "Dynalektric designs and manufactures magnetics, control panel assemblies, power electronics and cross segment solutions for OEMs, EPC contractors and utilities. We engineer to specification, test in-house and document everything we ship.")), /* @__PURE__ */ React.createElement("div", { className: "page-hero-visual" }, /* @__PURE__ */ React.createElement(
       "img",
       {
-        src: "./assets/About-Hero.png",
+        src: "./assets/About-Hero1.png",
         alt: "Dynalektric manufacturing facility",
         width: "720",
         height: "540",

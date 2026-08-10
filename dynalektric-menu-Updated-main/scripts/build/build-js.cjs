@@ -36,6 +36,7 @@ for (const cssFile of REQUIRED_CSS) {
 // Execute legacy root cleanup & assets migration
 require('./cleanup-root.cjs');
 require('./copy-favicons.cjs');
+require('./sync-image-slot.cjs');
 
 const JSX_MAPPING = [
   { output: 'tweaks-panel.js', bundle: false, candidates: [path.join(ROOT, 'src/components/layout/TweaksPanel.jsx')] },

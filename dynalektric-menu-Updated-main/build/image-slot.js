@@ -240,7 +240,12 @@
         if (f) this._ingest(f);
         this._input.value = '';
       });
-      this._img.addEventListener('load', () => this._applyView());
+      this._img.addEventListener('load', () => {
+        if (this._ghost && this._img.src && this._ghost.getAttribute('src') !== this._img.src) {
+          this._ghost.src = this._img.src;
+        }
+        this._applyView();
+      });
       this.addEventListener('dblclick', (e) => {
         if (!this.hasAttribute('data-editable') || !this._reframes()) return;
         e.preventDefault();
@@ -350,6 +355,10 @@
 
     _enterReframe() {
       if (this.hasAttribute('data-reframe')) return;
+      const url = this._userUrl || this.getAttribute('src') || '';
+      if (url && this._ghost.getAttribute('src') !== url) {
+        this._ghost.src = url;
+      }
       this.setAttribute('data-reframe', '');
       this._applyView();
       this._outside = (e) => {
@@ -520,7 +529,15 @@
       if (url) {
         if (this._img.getAttribute('src') !== url) {
           this._img.src = url;
-          this._ghost.src = url;
+        }
+        const isLazy = loading === 'lazy';
+        const imgLoaded = this._img.complete && this._img.naturalWidth > 0;
+        if (!isLazy || imgLoaded || this.hasAttribute('data-reframe')) {
+          if (this._ghost.getAttribute('src') !== url) {
+            this._ghost.src = url;
+          }
+        } else {
+          this._ghost.removeAttribute('src');
         }
         this._img.style.display = 'block';
         this._empty.style.display = 'none';
