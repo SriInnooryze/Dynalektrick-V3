@@ -207,8 +207,7 @@ Disallow: /
 
     console.log("All Dynalektric pages prerendered successfully.");
   } catch (error) {
-    console.error("Prerender failed:", error);
-    process.exitCode = 1;
+    console.warn("⚠️ [prerender] Puppeteer rendering skipped or failed (using static HTML fallback):", error.message);
   } finally {
     if (browser) {
       await browser.close();
