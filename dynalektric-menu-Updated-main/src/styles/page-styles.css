@@ -614,6 +614,7 @@
   perspective: 1600px;
   height: 540px;
   overflow: hidden;
+  border-radius: 0.1px; /* forces overflow:hidden to clip in 3D/preserve-3d context */
 }
 
 .flip-inner {
@@ -632,7 +633,6 @@
   -webkit-backface-visibility: hidden;
   border-radius: 0;
   overflow: hidden;
-  contain: paint;
   border: 1px solid var(--rule-soft);
 }
 

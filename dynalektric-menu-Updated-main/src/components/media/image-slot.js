@@ -131,9 +131,9 @@
   }
 
   const stylesheet =
-    ':host{display:inline-block;position:relative;vertical-align:top;' +
+    ':host{display:inline-block;position:relative;vertical-align:top;overflow:hidden;' +
     '  font:13px/1.3 system-ui,-apple-system,sans-serif;color:rgba(0,0,0,.55);width:240px;height:160px}' +
-    '.frame{position:absolute;inset:0;overflow:hidden;background:rgba(0,0,0,.04)}' +
+    '.frame{position:absolute;inset:0;overflow:hidden;background:rgba(0,0,0,.04);border-radius:inherit}' +
     '.frame img{position:absolute;max-width:none;transform:translate(-50%,-50%);' +
     '  -webkit-user-drag:none;user-select:none;touch-action:auto}' +
     '.spill{position:absolute;transform:translate(-50%,-50%);display:none;z-index:1;' +
