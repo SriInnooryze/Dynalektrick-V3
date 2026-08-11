@@ -3637,6 +3637,7 @@ img, video, svg, image-slot { max-width: 100%; }
 }
 .about-hero > .container {
   padding-top: 56px;
+  grid-template-columns: 0.85fr 1.15fr;
 }
 .about-hero .page-hero-copy .mono {
   margin-bottom: 32px;
