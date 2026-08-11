@@ -1222,6 +1222,20 @@
 }
 @media (max-width: 900px) { .rnd-teaser { grid-template-columns: 1fr; gap: 40px; } }
 
+.custom-eng-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.custom-eng-visual { order: 2; }
+.custom-eng-copy { order: 1; }
+@media (max-width: 900px) {
+  .custom-eng-split { grid-template-columns: 1fr; gap: 32px; }
+  .custom-eng-visual { order: -1; }
+  .custom-eng-copy { order: 0; }
+}
+
 /* Hero quickfacts */
 .hero-quickfacts {
   display: grid;
