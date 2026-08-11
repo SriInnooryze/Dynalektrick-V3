@@ -135,6 +135,10 @@ function PageRnd({ navigate }) {
       <section className="section reveal">
         <div className="container">
           <div className="custom-eng-split">
+            <div className="custom-eng-copy">
+              <div className="mono" style={{ color: 'var(--accent)' }}>Custom engineering</div>
+              <h2 style={{ marginTop: 16 }}>Have a non-standard requirement?</h2>
+            </div>
             <div className="custom-eng-visual" style={{ aspectRatio: '1517/1037' }}>
             <img
               src="./assets/custom-eng.png"
@@ -151,9 +155,7 @@ function PageRnd({ navigate }) {
                }}
             />
             </div>
-            <div className="custom-eng-copy">
-              <div className="mono" style={{ color: 'var(--accent)' }}>Custom engineering</div>
-              <h2 style={{ marginTop: 16 }}>Have a non-standard requirement?</h2>
+            <div className="custom-eng-foot">
               <p className="lead" style={{ marginTop: 24 }}>Our engineering team supports customer-specific requirements with technical review, product customization and manufacturing support for industrial, railway and power applications.</p>
               <div style={{ display: 'flex', gap: 16, marginTop: 32, flexWrap: 'wrap' }}>
                 <button className="btn btn-primary" onClick={() => navigate('contact')}>Submit RFQ <span className="arrow">→</span></button>

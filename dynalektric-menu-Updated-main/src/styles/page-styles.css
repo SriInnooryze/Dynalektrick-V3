@@ -1225,15 +1225,22 @@
 .custom-eng-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
+  grid-template-areas:
+    "copy   visual"
+    "foot   visual";
+  column-gap: 64px;
+  row-gap: 8px;
+  align-items: start;
 }
-.custom-eng-visual { order: 2; }
-.custom-eng-copy { order: 1; }
+.custom-eng-copy { grid-area: copy; }
+.custom-eng-visual { grid-area: visual; align-self: center; }
+.custom-eng-foot { grid-area: foot; align-self: end; }
 @media (max-width: 900px) {
-  .custom-eng-split { grid-template-columns: 1fr; gap: 32px; }
-  .custom-eng-visual { order: -1; }
-  .custom-eng-copy { order: 0; }
+  .custom-eng-split {
+    grid-template-columns: 1fr;
+    grid-template-areas: "copy" "visual" "foot";
+    row-gap: 24px;
+  }
 }
 
 /* Hero quickfacts */
