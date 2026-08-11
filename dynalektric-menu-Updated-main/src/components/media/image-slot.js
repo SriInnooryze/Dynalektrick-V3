@@ -511,25 +511,10 @@
       this._userUrl = (stored && stored.u) || null;
       const url = this._userUrl || srcAttr;
       if (!this.hasAttribute('data-reframe')) {
-        // When no user-stored view exists, seed initial y-offset from `position`
-        // attribute so fit="cover" images respect the intended crop focus.
-        // position="50% 20%" means the image focal point is at 20% from the top.
-        let defaultY = 0;
-        if (!stored && (this.getAttribute('fit') || 'cover') === 'cover') {
-          const pos = (this.getAttribute('position') || '50% 50%').trim().split(/\s+/);
-          const yStr = pos[1] || '50%';
-          const yPct = parseFloat(yStr);
-          if (Number.isFinite(yPct)) {
-            // Convert from CSS object-position % (0%=top, 100%=bottom)
-            // to _view.y offset (0=center, negative=shift up, positive=shift down)
-            // At 50% => 0 offset; at 20% => shift up (negative y)
-            defaultY = yPct - 50; // e.g. 20%-50% = -30 => shift image upward
-          }
-        }
         this._view = {
           s: stored && Number.isFinite(stored.s) ? clampS(stored.s) : 1,
           x: stored && Number.isFinite(stored.x) ? stored.x : 0,
-          y: stored && Number.isFinite(stored.y) ? stored.y : defaultY,
+          y: stored && Number.isFinite(stored.y) ? stored.y : 0,
         };
       }
       this._cap.textContent = this.getAttribute('placeholder') || 'Drop an image';
