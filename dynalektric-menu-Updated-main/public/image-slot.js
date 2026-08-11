@@ -131,9 +131,9 @@
   }
 
   const stylesheet =
-    ':host{display:inline-block;position:relative;vertical-align:top;' +
+    ':host{display:inline-block;position:relative;vertical-align:top;overflow:hidden;' +
     '  font:13px/1.3 system-ui,-apple-system,sans-serif;color:rgba(0,0,0,.55);width:240px;height:160px}' +
-    '.frame{position:absolute;inset:0;overflow:hidden;background:rgba(0,0,0,.04)}' +
+    '.frame{position:absolute;inset:0;overflow:hidden;background:rgba(0,0,0,.04);border-radius:inherit}' +
     '.frame img{position:absolute;max-width:none;transform:translate(-50%,-50%);' +
     '  -webkit-user-drag:none;user-select:none;touch-action:auto}' +
     '.spill{position:absolute;transform:translate(-50%,-50%);display:none;z-index:1;' +
@@ -511,25 +511,10 @@
       this._userUrl = (stored && stored.u) || null;
       const url = this._userUrl || srcAttr;
       if (!this.hasAttribute('data-reframe')) {
-        // When no user-stored view exists, seed initial y-offset from `position`
-        // attribute so fit="cover" images respect the intended crop focus.
-        // position="50% 20%" means the image focal point is at 20% from the top.
-        let defaultY = 0;
-        if (!stored && (this.getAttribute('fit') || 'cover') === 'cover') {
-          const pos = (this.getAttribute('position') || '50% 50%').trim().split(/\s+/);
-          const yStr = pos[1] || '50%';
-          const yPct = parseFloat(yStr);
-          if (Number.isFinite(yPct)) {
-            // Convert from CSS object-position % (0%=top, 100%=bottom)
-            // to _view.y offset (0=center, negative=shift up, positive=shift down)
-            // At 50% => 0 offset; at 20% => shift up (negative y)
-            defaultY = yPct - 50; // e.g. 20%-50% = -30 => shift image upward
-          }
-        }
         this._view = {
           s: stored && Number.isFinite(stored.s) ? clampS(stored.s) : 1,
           x: stored && Number.isFinite(stored.x) ? stored.x : 0,
-          y: stored && Number.isFinite(stored.y) ? stored.y : defaultY,
+          y: stored && Number.isFinite(stored.y) ? stored.y : 0,
         };
       }
       this._cap.textContent = this.getAttribute('placeholder') || 'Drop an image';

@@ -49,7 +49,6 @@ const CAPABILITIES = [
     back: "Supporting electrical and electronic components integrated into railway, power, equipment and cross-sector industrial systems.",
     labels: ["Component integration", "Custom assemblies", "Cross-sector applications"],
     cta: "Explore Integrated Solutions",
-    imgPosition: "50% 20%",
     imgPlaceholder: "Replace with Dynalektric Integrated Components image",
     imgAlt: "Dynalektric technician assembling integrated electrical components"
   }
