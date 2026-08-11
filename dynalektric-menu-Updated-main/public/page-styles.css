@@ -870,14 +870,14 @@
 
 /* Tablet — one large card with peek */
 @media (max-width: 1080px) {
-  .capcar-card { flex-basis: 80%; height: 520px; }
+  .capcar-card { flex-basis: 80%; height: auto; aspect-ratio: 4 / 3; min-height: 380px; }
 }
 
 /* Mobile — stacked, no carousel transform */
 @media (max-width: 720px) {
   .capcar-viewport { overflow: visible; margin: 0; padding: 0; }
   .capcar-track { flex-direction: column; gap: 20px; transform: none !important; }
-  .capcar-card { flex-basis: auto; width: 100%; height: 480px; perspective: 1400px; }
+  .capcar-card { flex-basis: auto; width: 100%; height: auto; aspect-ratio: 3 / 4; min-height: 380px; perspective: 1400px; }
   .capcar-controls { margin-top: 28px; }
   .capcar-arrows, .capcar-count { display: none; }
   .capcar-foot { margin-left: 0; }

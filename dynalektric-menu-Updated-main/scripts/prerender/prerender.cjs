@@ -3,7 +3,6 @@
  * Puppeteer-based static site generator for Dynalektric pages.
  */
 
-const puppeteer = require("puppeteer");
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
@@ -158,10 +157,26 @@ Disallow: /
 
     console.log(`Local server running at http://127.0.0.1:${PORT}`);
 
-    browser = await puppeteer.launch({
+    let puppeteer;
+    let launchOptions = {
       headless: true,
       args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
-    });
+    };
+
+    if (process.env.VERCEL) {
+      // Vercel's build container is missing NSS shared libs (libnspr4.so, etc.)
+      // that Google's Chrome for Testing binary needs, so use @sparticuz/chromium
+      // instead — a Chromium build compiled for serverless containers.
+      puppeteer = require("puppeteer-core");
+      const chromiumModule = require("@sparticuz/chromium");
+      const chromium = chromiumModule.default || chromiumModule;
+      launchOptions.args = chromium.args;
+      launchOptions.executablePath = await chromium.executablePath();
+    } else {
+      puppeteer = require("puppeteer");
+    }
+
+    browser = await puppeteer.launch(launchOptions);
 
     for (const pageFile of pages) {
       const pageUrl = `http://127.0.0.1:${PORT}/${pageFile}`;

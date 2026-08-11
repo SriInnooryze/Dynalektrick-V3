@@ -8,6 +8,13 @@ const path = require('path');
 const os = require('os');
 
 async function installChrome() {
+  if (process.env.VERCEL) {
+    // On Vercel, prerender.cjs uses @sparticuz/chromium instead, which is a
+    // statically-linked Chromium build that doesn't need a downloaded Chrome
+    // for Testing binary (and avoids missing system libs like libnspr4.so).
+    console.log('[install-chrome] Skipping Chrome download on Vercel (using @sparticuz/chromium).');
+    return;
+  }
   try {
     const platform = detectBrowserPlatform();
     if (!platform) {
