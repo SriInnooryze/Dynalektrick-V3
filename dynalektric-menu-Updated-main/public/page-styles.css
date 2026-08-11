@@ -3669,6 +3669,12 @@ img, video, svg, image-slot { max-width: 100%; }
   display: block;
   animation: innerHeroIn 900ms cubic-bezier(.2,.8,.2,1) both;
 }
+.about-hero .page-hero-visual {
+  aspect-ratio: 6760 / 3698;
+}
+.contact-hero .page-hero-visual {
+  aspect-ratio: 793 / 450;
+}
 @keyframes innerHeroIn {
   from { transform: scale(1.05); opacity: 0; }
   to   { transform: scale(1.02); opacity: 1; }
@@ -3708,6 +3714,12 @@ img, video, svg, image-slot { max-width: 100%; }
     object-fit: contain;
     background: var(--bg-alt);
     transform: none;
+  }
+  .about-hero .page-hero-visual {
+    aspect-ratio: 6760 / 3698;
+  }
+  .contact-hero .page-hero-visual {
+    aspect-ratio: 793 / 450;
   }
   .industries-hero-visual {
     aspect-ratio: 1399 / 1124;

@@ -273,7 +273,7 @@ function PageContact({ navigate, focusId }) {
   if (submitted) {
     return (
       <main className="page-enter">
-        <section className="page-hero page-hero--split">
+        <section className="page-hero page-hero--split contact-hero">
           <div className="container">
             <div className="page-hero-copy">
               <div className="mono">CONTACT DYNALEKTRIC</div>

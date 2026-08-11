@@ -35,7 +35,9 @@ for (const cssFile of REQUIRED_CSS) {
 
 // Execute legacy root cleanup & assets migration
 require('./cleanup-root.cjs');
-require('./copy-favicons.cjs');
+// Favicons are now the final images supplied directly at public/assets/ —
+// copy-favicons.cjs used to regenerate them from the old logo/photo on every
+// build, which would overwrite the supplied files. Disabled.
 require('./sync-image-slot.cjs');
 
 const JSX_MAPPING = [
