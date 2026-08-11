@@ -613,6 +613,7 @@
   flex: 0 0 47%;
   perspective: 1600px;
   height: 540px;
+  overflow: hidden;
 }
 
 .flip-inner {
@@ -631,6 +632,7 @@
   -webkit-backface-visibility: hidden;
   border-radius: 0;
   overflow: hidden;
+  contain: paint;
   border: 1px solid var(--rule-soft);
 }
 

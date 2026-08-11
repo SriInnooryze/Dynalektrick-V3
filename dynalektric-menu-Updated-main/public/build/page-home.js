@@ -5,7 +5,7 @@ const CAPABILITIES = [
     productId: "magnetics",
     slotId: "cap-magnetics",
     resKey: "cardMagnetics",
-    img: "assets/card-magnetics-optimized.webp",
+    img: "assets/card-magnetics-optimized.png",
     title: "Magnetics",
     back: "Transformers, reactors and magnetic components engineered for power conversion, distribution, harmonic control and specialised industrial applications.",
     labels: ["Application-specific engineering", "Manufacturing and testing", "Industrial and infrastructure use"],
@@ -49,6 +49,7 @@ const CAPABILITIES = [
     back: "Supporting electrical and electronic components integrated into railway, power, equipment and cross-sector industrial systems.",
     labels: ["Component integration", "Custom assemblies", "Cross-sector applications"],
     cta: "Explore Integrated Solutions",
+    imgPosition: "50% 20%",
     imgPlaceholder: "Replace with Dynalektric Integrated Components image",
     imgAlt: "Dynalektric technician assembling integrated electrical components"
   }
