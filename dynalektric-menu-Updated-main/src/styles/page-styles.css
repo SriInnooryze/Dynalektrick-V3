@@ -1225,21 +1225,56 @@
 .custom-eng-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "copy   visual"
-    "foot   visual";
   column-gap: 64px;
-  row-gap: 8px;
-  align-items: start;
+  align-items: center;
 }
-.custom-eng-copy { grid-area: copy; }
-.custom-eng-visual { grid-area: visual; align-self: center; }
-.custom-eng-foot { grid-area: foot; align-self: end; }
+.custom-eng-content {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.custom-eng-copy {
+  margin: 0;
+}
+.custom-eng-desc {
+  margin-top: 18px;
+  margin-bottom: 28px;
+}
+.custom-eng-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.custom-eng-visual {
+  grid-column: 2;
+  align-self: center;
+}
 @media (max-width: 900px) {
   .custom-eng-split {
-    grid-template-columns: 1fr;
-    grid-template-areas: "copy" "visual" "foot";
-    row-gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .custom-eng-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: auto;
+  }
+  .custom-eng-copy {
+    order: 1;
+  }
+  .custom-eng-visual {
+    order: 2;
+  }
+  .custom-eng-desc {
+    order: 3;
+    margin: 0;
+  }
+  .custom-eng-cta {
+    order: 4;
   }
 }
 
@@ -3376,14 +3411,16 @@ img, video, svg, image-slot { max-width: 100%; }
 .prodx-subcat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1px;
-  background: var(--rule-soft);
+  gap: 0;
+  background: var(--bg-card);
   border: 1px solid var(--rule-soft);
 }
 .prodx-subcat-card {
   background: var(--bg-card);
   padding: 20px 22px;
   border: 0;
+  border-right: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
   text-align: left;
   cursor: pointer;
   display: flex;
@@ -3676,6 +3713,10 @@ img, video, svg, image-slot { max-width: 100%; }
 .contact-hero .page-hero-visual {
   aspect-ratio: 793 / 450;
 }
+.industries-hero-visual {
+  align-self: start;
+  margin-top: 70px;
+}
 @keyframes innerHeroIn {
   from { transform: scale(1.05); opacity: 0; }
   to   { transform: scale(1.02); opacity: 1; }
@@ -3723,6 +3764,8 @@ img, video, svg, image-slot { max-width: 100%; }
     aspect-ratio: 793 / 450;
   }
   .industries-hero-visual {
+    align-self: auto;
+    margin-top: 0;
     aspect-ratio: 1399 / 1124;
   }
   .industries-hero-visual img {

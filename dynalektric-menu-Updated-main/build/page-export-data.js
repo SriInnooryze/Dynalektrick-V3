@@ -72,7 +72,7 @@ const EXP_LEGAL = [
   { k: "GST", v: "29AAHCD5377K1Z1" },
   { k: "IEC (Importer Exporter Code)", cta: true, ctaText: "View Certificate", url: "./assets/IEC-Certificate.pdf" },
   { k: "Registered address", v: "Dynalektric Equipment Pvt. Ltd.\nManufacturing facility,\nNo-49/2 Vaderamanchanahalli Village, Kallubalu, Anekal Taluk,\nJigani Hobli, Bangalore, India- 560105" },
-  { k: "D-U-N-S number", v: "Provided if available on request" }
+  { k: "D-U-N-S number", v: "86-169-5780" }
 ];
 const EXP_FINANCIAL = [
   { k: "Bank reference", v: "Available on request" },

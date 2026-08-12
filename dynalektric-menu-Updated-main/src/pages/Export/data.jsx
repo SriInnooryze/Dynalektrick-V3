@@ -57,7 +57,7 @@ const EXP_LEGAL = [
   { k: 'GST', v: '29AAHCD5377K1Z1' },
   { k: 'IEC (Importer Exporter Code)', cta: true, ctaText: 'View Certificate', url: './assets/IEC-Certificate.pdf' },
   { k: 'Registered address', v: 'Dynalektric Equipment Pvt. Ltd.\nManufacturing facility,\nNo-49/2 Vaderamanchanahalli Village, Kallubalu, Anekal Taluk,\nJigani Hobli, Bangalore, India- 560105' },
-  { k: 'D-U-N-S number', v: 'Provided if available on request' },
+  { k: 'D-U-N-S number', v: '86-169-5780' },
 ];
 const EXP_FINANCIAL = [
   { k: 'Bank reference', v: 'Available on request' },
@@ -88,9 +88,9 @@ const CERT_GROUPS = [
   },
 ];
 const CERT_STATUS = {
-  held:      { label: 'Held', cls: 'is-held' },
-  complied:  { label: 'Complied', cls: 'is-complied' },
-  progress:  { label: 'In Progress', cls: 'is-progress' },
+  held: { label: 'Held', cls: 'is-held' },
+  complied: { label: 'Complied', cls: 'is-complied' },
+  progress: { label: 'In Progress', cls: 'is-progress' },
   available: { label: 'Available based on requirement', cls: 'is-available' },
 };
 
@@ -225,8 +225,8 @@ const EXP_ESG = [
   { k: 'ISO 45001 status', s: 'available' },
 ];
 const EXP_STATUS_CHIP = {
-  available:   { label: 'Available', cls: 'chip-available' },
-  review:      { label: 'Under Review', cls: 'chip-review' },
+  available: { label: 'Available', cls: 'chip-available' },
+  review: { label: 'Under Review', cls: 'chip-review' },
   requirement: { label: 'Based on Customer Requirement', cls: 'chip-requirement' },
 };
 
