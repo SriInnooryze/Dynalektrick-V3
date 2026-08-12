@@ -1957,10 +1957,14 @@
     const [submitted, setSubmitted] = React.useState(false);
     React.useEffect(() => {
       if (!submitted) return;
+      window.scrollTo({ top: 0, behavior: "instant" });
       const t = setTimeout(() => {
-        const el = document.querySelector(".success-summary");
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
+        const el = document.querySelector(".success-summary") || document.querySelector(".success-state");
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - 90;
+          window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+        }
+      }, 700);
       return () => clearTimeout(t);
     }, [submitted]);
     const [form, setForm] = React.useState({

@@ -47,10 +47,17 @@ function PageContact({ navigate, focusId }) {
   const [submitted, setSubmitted] = React.useState(false);
   React.useEffect(() => {
     if (!submitted) return;
+    // 1. Instantly position scroll at top (Hero section)
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // 2. Smoothly scroll from Hero section to the receipt section (reference card)
     const t = setTimeout(() => {
-      const el = document.querySelector('.success-summary');
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
+      const el = document.querySelector('.success-summary') || document.querySelector('.success-state');
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - 90;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      }
+    }, 700);
     return () => clearTimeout(t);
   }, [submitted]);
 
