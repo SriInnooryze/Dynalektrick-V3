@@ -561,11 +561,11 @@ function PageContact({ navigate, focusId }) {
             </div>
             <div className="contact-info-block">
               <div className="label">Address</div>
-              <div className="value">Dynalektric Equipment Pvt. Ltd.<br />Manufacturing facility,<br />No-49/2
+              <div className="value">Dynalektric Equipment Private Limited.<br />No.49/2
                 Vaderamanchanahalli Village,
                 Kallubalu, Anekal Taluk,
                 Jigani Hobli,
-                Bangalore, India- 560105</div>
+                Bangalore, India - 560105</div>
             </div>
             <div className="contact-info-block">
               <div className="label">Working hours</div>
