@@ -41,6 +41,23 @@ const INDUSTRY_OPTS = [
   { id: "other", label: "Other" }
 ];
 const ACCEPTED_FILE_TYPES = ".pdf,.doc,.docx,.xls,.xlsx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+function generateSubmissionId() {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+  if (typeof crypto !== "undefined" && typeof crypto.getRandomValues === "function") {
+    const bytes = crypto.getRandomValues(new Uint8Array(16));
+    bytes[6] = bytes[6] & 15 | 64;
+    bytes[8] = bytes[8] & 63 | 128;
+    const hex = Array.from(bytes, (b) => b.toString(16).padStart(2, "0")).join("");
+    return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+  }
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+    const r = Math.random() * 16 | 0;
+    const v = c === "x" ? r : r & 3 | 8;
+    return v.toString(16);
+  });
+}
 function PageContact({ navigate, focusId }) {
   useReveal();
   React.useEffect(() => {
@@ -87,7 +104,7 @@ function PageContact({ navigate, focusId }) {
   const [submitError, setSubmitError] = React.useState("");
   const [leadId, setLeadId] = React.useState("");
   const submissionIdRef = React.useRef(
-    crypto.randomUUID()
+    generateSubmissionId()
   );
   const set = (k, v) => setForm((f) => __spreadProps(__spreadValues({}, f), { [k]: v }));
   const fileToBase64 = (selectedFile) => {
