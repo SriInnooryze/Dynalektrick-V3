@@ -48,25 +48,25 @@ function Footer() {
 
             <nav aria-label="Footer navigation">
               <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about.html">About</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="about">About</a></li>
                 <li>
-                  <a href="./products-solutions.html">
+                  <a href="products-solutions">
                     Products &amp; Solutions
                   </a>
                 </li>
                 <li>
-                  <a href="./innovation-rd.html">
+                  <a href="innovation-rd">
                     Innovation Portfolio
                   </a>
                 </li>
                 <li>
-                  <a href="./industries-applications.html">
+                  <a href="industries-applications">
                     Industries &amp; Applications
                   </a>
                 </li>
-                <li><a href="./export.html">Export</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="export">Export</a></li>
+                <li><a href="contact">Contact</a></li>
               </ul>
             </nav>
           </div>
@@ -77,7 +77,7 @@ function Footer() {
             <ul>
               {PRODUCTS.map((p) => (
                 <li key={p.id}>
-                  <a href={`./products-solutions.html?focus=${p.id}`}>
+                  <a href={`products-solutions?focus=${p.id}`}>
                     {p.name}
                   </a>
                 </li>
@@ -94,7 +94,7 @@ function Footer() {
               <li><a href="mailto:sales01@dynalektric.com">sales01@dynalektric.com</a></li>
               <li><a href="mailto:cs@dynalektric.com">cs@dynalektric.com</a></li>
               <li>
-                <a href="./contact.html">
+                <a href="contact">
                   Submit RFQ →
                 </a>
               </li>

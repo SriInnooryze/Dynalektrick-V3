@@ -3,11 +3,11 @@
  */
 
 export const PAGE_URLS = {
-  home:       './index.html',
-  about:      './about.html',
-  products:   './products-solutions.html',
-  rnd:        './innovation-rd.html',
-  industries: './industries-applications.html',
-  export:     './export.html',
-  contact:    './contact.html',
+  home:       '/',
+  about:      'about',
+  products:   'products-solutions',
+  rnd:        'innovation-rd',
+  industries: 'industries-applications',
+  export:     'export',
+  contact:    'contact',
 };

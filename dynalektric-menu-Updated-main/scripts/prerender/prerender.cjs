@@ -57,13 +57,21 @@ const server = http.createServer((req, res) => {
     requestPath = "/index.html";
   }
 
-  const candidatePaths = [
+  let candidatePaths = [
     path.join(PUBLIC_DIR, requestPath),
     path.join(ROOT_DIR, "src/styles", requestPath),
     path.join(ROOT_DIR, "src/components/media", requestPath),
     path.join(ROOT_DIR, "build", requestPath),
     path.join(ROOT_DIR, requestPath),
   ];
+
+  if (!path.extname(requestPath)) {
+    candidatePaths = [
+      path.join(PUBLIC_DIR, requestPath + ".html"),
+      path.join(ROOT_DIR, requestPath + ".html"),
+      ...candidatePaths,
+    ];
+  }
 
   let filePath = null;
   for (const cand of candidatePaths) {

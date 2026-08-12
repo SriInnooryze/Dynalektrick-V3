@@ -1,13 +1,13 @@
 /* Header.jsx — shared site header and mobile drawer */
 
 const NAV_LINKS = [
-  { id: 'home',       label: 'Home',                        href: './index.html' },
-  { id: 'about',      label: 'About',                       href: './about.html' },
-  { id: 'products',   label: 'Products & Solutions',        href: './products-solutions.html' },
-  { id: 'rnd',        label: 'Innovation Portfolio',         href: './innovation-rd.html' },
-  { id: 'industries', label: 'Industries & Applications',   href: './industries-applications.html' },
-  { id: 'export',     label: 'Export',                      href: './export.html' },
-  { id: 'contact',    label: 'Contact',                     href: './contact.html' },
+  { id: 'home',       label: 'Home',                        href: '/' },
+  { id: 'about',      label: 'About',                       href: 'about' },
+  { id: 'products',   label: 'Products & Solutions',        href: 'products-solutions' },
+  { id: 'rnd',        label: 'Innovation Portfolio',         href: 'innovation-rd' },
+  { id: 'industries', label: 'Industries & Applications',   href: 'industries-applications' },
+  { id: 'export',     label: 'Export',                      href: 'export' },
+  { id: 'contact',    label: 'Contact',                     href: 'contact' },
 ];
 
 function Header() {
@@ -18,7 +18,7 @@ function Header() {
     <>
       <header className="topbar" role="banner">
         <div className="topbar-inner">
-          <a className="topbar-logo" href="./index.html" aria-label="Dynalektric home">
+          <a className="topbar-logo" href="/" aria-label="Dynalektric home">
             <img src={(window.__resources && window.__resources.dynaLogo) || "assets/dynalektric-logo.png"} alt="Dynalektric, Power Motion Safety" width="350" height="150" decoding="async" />
           </a>
           <nav className="topbar-nav" aria-label="Main navigation">
@@ -34,7 +34,7 @@ function Header() {
             ))}
           </nav>
           <div className="topbar-cta">
-            <a className="btn btn-primary" href="./contact.html" aria-label="Submit RFQ on contact page">
+            <a className="btn btn-primary" href="contact" aria-label="Submit RFQ on contact page">
               Submit RFQ <span className="arrow" aria-hidden="true">→</span>
             </a>
             <button className="menu-btn" onClick={() => setDrawerOpen(true)} aria-label="Open menu">Menu</button>
@@ -54,7 +54,7 @@ function Header() {
             {n.label}
           </a>
         ))}
-        <a className="btn btn-primary" href="./contact.html" style={{ marginTop: 24, alignSelf: 'flex-start' }}>
+        <a className="btn btn-primary" href="contact" style={{ marginTop: 24, alignSelf: 'flex-start' }}>
           Submit RFQ <span className="arrow" aria-hidden="true">→</span>
         </a>
       </div>

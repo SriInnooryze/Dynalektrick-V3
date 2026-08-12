@@ -12,6 +12,7 @@
     "build": "node scripts/build/install-chrome.cjs && npm run clean && npm run build:js && npm run build:production",
     "prerender": "node scripts/prerender/prerender.cjs",
     "verify": "node scripts/verify/__verify_ind.cjs",
+    "serve": "node scripts/dev/serve-dist.cjs",
     "optimize": "node scripts/optimize/copy-assets.cjs"
   },
   "keywords": [

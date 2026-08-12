@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Serve /about as about.html, /contact as contact.html, etc. (clean URLs)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^.]+)$ $1.html [L]
+
+# Redirect /about.html -> /about so the extension never shows in the browser
+RewriteCond %{THE_REQUEST} \s/+([^.\s]+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
