@@ -388,7 +388,7 @@
           industries: ["railways", "renewables", "heavy", "mhe"]
         },
         "04.3": {
-          description: "Industrial UPS systems providing uninterrupted, clean and regulated power during outages, voltage fluctuations and electrical disturbances.",
+          description: "Industrial UPS systems providing uninterrupted, clean and regulated power during outages, voltage fluctuations and electrical disturbances. Available in Online Double Conversion, Static and Offline topologies with SMF, Lead Acid and Lithium-Ion battery options and remote monitoring for dependable power continuity.",
           applications: ["IT & Data Centers", "Hospitals", "Educational Institutions", "Telecom", "Banking", "Industrial Automation", "Manufacturing", "Laboratories", "Security Systems"],
           specs: [
             { k: "Rating range", v: "2 kVA \u2013 250 kVA" },

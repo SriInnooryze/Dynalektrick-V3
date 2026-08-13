@@ -58,7 +58,7 @@ function PageAbout({ navigate }) {
                 We work as a long-term manufacturing partner. Our engineers take a customer specification, ask the right questions and supply a tested, documented solution on schedule.
               </p>
               <p className="about-desc">
-                From single prototype builds to repeat production lines, the approach is the same: every Dynalektric product is designed, wound, wired, tested and documented in-house. Engineering, manufacturing and quality work on one floor, on one team.
+                From single prototype builds to repeat production lines, the approach is the same: every Dynalektric product is designed, wound, wired, tested and documented in-house. Engineering, manufacturing and quality work on one floor, as one team.
               </p>
             </div>
           </div>

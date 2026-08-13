@@ -30,6 +30,8 @@ const FOCUS_AREAS = [
       'Distributed Power with Communication System',
       'On-board Remote Monitoring System',
       'CAN Bus & IoT for MHE Chargers',
+      'KAVACH (TCAS)',
+      'VCU (Vehicle Control Unit)',
     ],
   },
   {
